@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ListeFactures xmlns="http://fr.enstimac.gipsi/gsi/factures"><Facture id="facture1"><Client id="client1"/><Article idProduit="Tosh89" quantite="8"/><Article idProduit="Iphone5G" quantite="5"/><Article idProduit="IpadMini" quantite="2"/></Facture></ListeFactures>

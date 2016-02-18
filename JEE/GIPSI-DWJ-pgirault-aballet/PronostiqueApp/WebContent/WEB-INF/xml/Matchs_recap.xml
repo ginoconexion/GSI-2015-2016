@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<resultats xmlns="http://emac.fr/gipsi/gsi/matchs">
+	<match date="26-01-2015">
+		<equipe id="41" score="5">
+			<pays>Angleterre</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/eng.png"></drapeau>
+		</equipe>
+		<equipe id="42" score="2">
+			<pays>Autriche</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/aut.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="26-02-2015">
+		<equipe id="41" score="4">
+			<pays>Angleterre</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/eng.png"></drapeau>
+		</equipe>
+		<equipe id="43" score="3">
+			<pays>Roumanie</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/rou.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="26-03-2015">
+		<equipe id="41" score="2">
+			<pays>Angleterre</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/eng.png"></drapeau>
+		</equipe>
+		<equipe id="44" score="4">
+			<pays>Pays de Galles</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/wal.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="26-04-2015">
+		<equipe id="42" score="1">
+			<pays>Autriche</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/aut.png"></drapeau>
+		</equipe>
+		<equipe id="43" score="0">
+			<pays>Roumanie</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/rou.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="26-05-2015">
+		<equipe id="42" score="2">
+			<pays>Autriche</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/aut.png"></drapeau>
+		</equipe>
+		<equipe id="44" score="1">
+			<pays>Pays de Galles</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/wal.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="26-08-2015">
+		<equipe id="43" score="3">
+			<pays>Roumanie</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/rou.png"></drapeau>
+		</equipe>
+		<equipe id="44" score="3">
+			<pays>Pays de Galles</pays>
+			<poule>4</poule>
+			<drapeau src="/flag/wal.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="26-09-2015">
+		<equipe id="51" score="5">
+			<pays>Portugal</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/por.png"></drapeau>
+		</equipe>
+		<equipe id="52" score="45">
+			<pays>Croatie</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/cro.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="26-02-2015">
+		<equipe id="51" score="8">
+			<pays>Portugal</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/por.png"></drapeau>
+		</equipe>
+		<equipe id="53" score="1">
+			<pays>Slovaquie</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/slo.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="26-10-2015">
+		<equipe id="51" score="5">
+			<pays>Portugal</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/por.png"></drapeau>
+		</equipe>
+		<equipe id="54" score="2">
+			<pays>Albanie</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/alb.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="26-03-2015">
+		<equipe id="52" score="2">
+			<pays>Croatie</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/cro.png"></drapeau>
+		</equipe>
+		<equipe id="53" score="3">
+			<pays>Slovaquie</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/slo.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="26-04-2015">
+		<equipe id="52" score="1">
+			<pays>Croatie</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/cro.png"></drapeau>
+		</equipe>
+		<equipe id="54" score="4">
+			<pays>Albanie</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/alb.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="05-05-2015">
+		<equipe id="53" score="3">
+			<pays>Slovaquie</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/slo.png"></drapeau>
+		</equipe>
+		<equipe id="54" score="2">
+			<pays>Albanie</pays>
+			<poule>5</poule>
+			<drapeau src="/flag/alb.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="15-10-2015">
+		<equipe id="61" score="0">
+			<pays>Belgique</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/bel.png"></drapeau>
+		</equipe>
+		<equipe id="62" score="3">
+			<pays>Ukraine</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/ukr.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="15-02-2015">
+		<equipe id="61" score="2">
+			<pays>Belgique</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/bel.png"></drapeau>
+		</equipe>
+		<equipe id="63" score="4">
+			<pays>Hongrie</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/hon.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="15-05-2015">
+		<equipe id="61" score="4">
+			<pays>Belgique</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/bel.png"></drapeau>
+		</equipe>
+		<equipe id="64" score="2">
+			<pays>Irlande du Nord</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/nir.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="15-01-2015">
+		<equipe id="62" score="6">
+			<pays>Ukraine</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/ukr.png"></drapeau>
+		</equipe>
+		<equipe id="63" score="6">
+			<pays>Hongrie</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/hon.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="15-03-2015">
+		<equipe id="62" score="0">
+			<pays>Ukraine</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/ukr.png"></drapeau>
+		</equipe>
+		<equipe id="64" score="5">
+			<pays>Irlande du Nord</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/nir.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="15-05-2015">
+		<equipe id="63" score="1">
+			<pays>Hongrie</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/hon.png"></drapeau>
+		</equipe>
+		<equipe id="64" score="4">
+			<pays>Irlande du Nord</pays>
+			<poule>6</poule>
+			<drapeau src="/flag/nir.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="09-01-2015">
+		<equipe id="11" score="1">
+			<pays>France</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/fra.png"></drapeau>
+		</equipe>
+		<equipe id="12" score="2">
+			<pays>Italie</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/ita.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="09-02-2015">
+		<equipe id="11" score="3">
+			<pays>France</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/fra.png"></drapeau>
+		</equipe>
+		<equipe id="13" score="2">
+			<pays>Republique tcheque</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/cze.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="09-03-2015">
+		<equipe id="11" score="4">
+			<pays>France</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/fra.png"></drapeau>
+		</equipe>
+		<equipe id="14" score="2">
+			<pays>Turquie</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/tur.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="09-04-2015">
+		<equipe id="12" score="5">
+			<pays>Italie</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/ita.png"></drapeau>
+		</equipe>
+		<equipe id="13" score="1">
+			<pays>Republique tcheque</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/cze.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="09-06-2015">
+		<equipe id="12" score="5">
+			<pays>Italie</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/ita.png"></drapeau>
+		</equipe>
+		<equipe id="14" score="2">
+			<pays>Turquie</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/tur.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="09-10-2015">
+		<equipe id="13" score="1">
+			<pays>Republique tcheque</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/cze.png"></drapeau>
+		</equipe>
+		<equipe id="14" score="2">
+			<pays>Turquie</pays>
+			<poule>1</poule>
+			<drapeau src="/flag/tur.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="18-01-2015">
+		<equipe id="21" score="2">
+			<pays>Espagne</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/esp.png"></drapeau>
+		</equipe>
+		<equipe id="22" score="2">
+			<pays>Russie</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/rus.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="19-01-2015">
+		<equipe id="21" score="3">
+			<pays>Espagne</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/esp.png"></drapeau>
+		</equipe>
+		<equipe id="23" score="2">
+			<pays>Suede</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/swe.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="20-01-2015">
+		<equipe id="21" score="1">
+			<pays>Espagne</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/esp.png"></drapeau>
+		</equipe>
+		<equipe id="24" score="2">
+			<pays>Republique Irlande</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/irl.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="21-01-2015">
+		<equipe id="22" score="0">
+			<pays>Russie</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/rus.png"></drapeau>
+		</equipe>
+		<equipe id="23" score="2">
+			<pays>Suede</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/swe.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="23-01-2015">
+		<equipe id="22" score="0">
+			<pays>Russie</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/rus.png"></drapeau>
+		</equipe>
+		<equipe id="24" score="2">
+			<pays>Republique Irlande</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/irl.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="24-01-2015">
+		<equipe id="23" score="0">
+			<pays>Suede</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/swe.png"></drapeau>
+		</equipe>
+		<equipe id="24" score="2">
+			<pays>Republique Irlande</pays>
+			<poule>2</poule>
+			<drapeau src="/flag/irl.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="01-10-2015">
+		<equipe id="31" score="0">
+			<pays>Allemagne</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/ger.png"></drapeau>
+		</equipe>
+		<equipe id="32" score="2">
+			<pays>Suisse</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/sui.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="02-10-2015">
+		<equipe id="31" score="0">
+			<pays>Allemagne</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/ger.png"></drapeau>
+		</equipe>
+		<equipe id="33" score="2">
+			<pays>Pologne</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/pol.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="15-10-2015">
+		<equipe id="31" score="3">
+			<pays>Allemagne</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/ger.png"></drapeau>
+		</equipe>
+		<equipe id="34" score="2">
+			<pays>Islande</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/isl.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="25-10-2015">
+		<equipe id="32" score="0">
+			<pays>Suisse</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/sui.png"></drapeau>
+		</equipe>
+		<equipe id="33" score="2">
+			<pays>Pologne</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/pol.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="30-10-2015">
+		<equipe id="32" score="0">
+			<pays>Suisse</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/sui.png"></drapeau>
+		</equipe>
+		<equipe id="34" score="2">
+			<pays>Islande</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/isl.png"></drapeau>
+		</equipe>
+	</match>
+	<match date="23-10-2015">
+		<equipe id="33" score="0">
+			<pays>Pologne</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/pol.png"></drapeau>
+		</equipe>
+		<equipe id="34" score="2">
+			<pays>Islande</pays>
+			<poule>3</poule>
+			<drapeau src="/flag/isl.png"></drapeau>
+		</equipe>
+	</match>
+</resultats>

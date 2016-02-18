@@ -1,0 +1,36 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://fr.enstimac.gipsi/gsi/factures" targetNamespace="http://fr.enstimac.gipsi/gsi/factures"
+	elementFormDefault="qualified">
+
+	<xsd:element name="Article">
+		<xsd:complexType>
+			<xsd:attribute name="idProduit" type="xsd:string" />
+			<xsd:attribute name="quantite" type="xsd:int" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Client">
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Facture">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Client" minOccurs="1" maxOccurs="1" />
+				<xsd:element ref="Article" minOccurs="1" maxOccurs="unbounded" />
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="ListeFactures">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Facture" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

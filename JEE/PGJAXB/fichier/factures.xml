@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListeFactures xmlns="http://fr.enstimac.gipsi/gsi/factures">
+	<Facture id="123">
+	    <Client id="Audray Tautou"/>
+	    <Article idProduit="CDRx20" quantite="10"/>
+	    <Article idProduit="Tosh89" quantite="1"/>
+	</Facture>         
+    <Facture id="124">
+	    <Client id="Frederico Abenben"/>
+	    <Article idProduit="Iphone5G" quantite="2"/>
+	    <Article idProduit="IpadMini" quantite="1"/>
+	     <Article idProduit="IMac" quantite="1"/>
+	</Facture>  
+    <Facture id="125">
+ 	    <Client id="Clarisse Lasocisse"/>
+	    <Article idProduit="Iphone3G" quantite="1"/>
+	</Facture>
+	    <Facture id="126">
+	    <Client id="Frederico Abenben"/>
+	    <Article idProduit="CDRx20" quantite="20"/>
+	    <Article idProduit="Tosh89" quantite="1"/>
+	     <Article idProduit="Iphone3G" quantite="1"/>
+	</Facture>  
+	<Facture id="127">
+	    <Client id="Audray Tautou"/>
+	    <Article idProduit="Iphone5G" quantite="2"/>
+	    <Article idProduit="IpadMini" quantite="1"/>
+	     <Article idProduit="IMac" quantite="1"/>
+	</Facture>    
+	    <Facture id="128">
+	    <Client id="Frederico Abenben"/>
+	    <Article idProduit="Iphone5G" quantite="2"/>
+	    <Article idProduit="IpadMini" quantite="1"/>
+	    <Article idProduit="IMac" quantite="1"/>
+	</Facture> 
+</ListeFactures>

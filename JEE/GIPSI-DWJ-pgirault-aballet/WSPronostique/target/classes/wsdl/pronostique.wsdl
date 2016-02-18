@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.emac.fr/pronostique/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WSPronostique"
+	targetNamespace="http://www.emac.fr/pronostique/">
+	<wsdl:types>
+
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.emac.fr/pronostique/">
+			<xsd:element name="addPronosticInput">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idMatch" type="xsd:string"></xsd:element>
+						<xsd:element name="idJoueur" type="xsd:string"></xsd:element>
+						<xsd:element name="score1" type="xsd:int"></xsd:element>
+						<xsd:element name="score2" type="xsd:int"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addPronosticResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="out" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getPointJoueurInput">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idJoueur" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getPointJoueurResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="nbPoints" type="xsd:int"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updatePointJoueurInput">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idJoueur" type="xsd:string"></xsd:element>
+						<xsd:element name="nbPoints" type="xsd:int"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updatePointJoueurResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="out" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addResultatReelInput">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idMatch" type="xsd:string"></xsd:element>
+						<xsd:element name="score1" type="xsd:int"></xsd:element>
+						<xsd:element name="score2" type="xsd:int"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addResultatReelResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="out" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addJoueurInput">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="idJoueur" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addJoueurResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="out" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAllJoueurInput">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="in" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAllJoueurResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idJoueur" maxOccurs="unbounded"
+							type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getPronosticByJoueurInput">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idMatch" type="xsd:string"></xsd:element>
+						<xsd:element name="idJoueur" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getPronosticByJoueurResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idMatch" type="xsd:string"></xsd:element>
+						<xsd:element name="idJoueur" type="xsd:string"></xsd:element>
+						<xsd:element name="scoreEq1" type="xsd:int"></xsd:element>
+						<xsd:element name="scoreEq2" type="xsd:int"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="addPronosticRequest">
+		<wsdl:part name="parameters" element="tns:addPronosticInput"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addPronosticResponse">
+		<wsdl:part name="parameters" element="tns:addPronosticResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getPointJoueurRequest">
+		<wsdl:part name="parameters" element="tns:getPointJoueurInput"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getPointJoueurResponse">
+		<wsdl:part name="parameters" element="tns:getPointJoueurResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updatePointJoueurRequest">
+		<wsdl:part name="parameters" element="tns:updatePointJoueurInput"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updatePointJoueurResponse">
+		<wsdl:part name="parameters" element="tns:updatePointJoueurResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addResultatReelRequest">
+		<wsdl:part name="parameters" element="tns:addResultatReelInput"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addResultatReelResponse">
+		<wsdl:part name="parameters" element="tns:addResultatReelResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addJoueurRequest">
+		<wsdl:part name="parameters" element="tns:addJoueurInput"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addJoueurResponse">
+		<wsdl:part name="parameters" element="tns:addJoueurResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAllJoueurRequest">
+		<wsdl:part name="parameters" element="tns:getAllJoueurInput"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAllJoueurResponse">
+		<wsdl:part name="parameters" element="tns:getAllJoueurResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getPronosticByJoueurRequest">
+		<wsdl:part name="parameters" element="tns:getPronosticByJoueurInput"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getPronosticByJoueurResponse">
+		<wsdl:part name="parameters" element="tns:getPronosticByJoueurResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="PronostiqueInterface">
+		<wsdl:operation name="addPronostic">
+			<wsdl:input message="tns:addPronosticRequest"></wsdl:input>
+			<wsdl:output message="tns:addPronosticResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPointJoueur">
+			<wsdl:input message="tns:getPointJoueurRequest"></wsdl:input>
+			<wsdl:output message="tns:getPointJoueurResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updatePointJoueur">
+			<wsdl:input message="tns:updatePointJoueurRequest"></wsdl:input>
+			<wsdl:output message="tns:updatePointJoueurResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addResultatReel">
+			<wsdl:input message="tns:addResultatReelRequest"></wsdl:input>
+			<wsdl:output message="tns:addResultatReelResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addJoueur">
+			<wsdl:input message="tns:addJoueurRequest"></wsdl:input>
+			<wsdl:output message="tns:addJoueurResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAllJoueur">
+			<wsdl:input message="tns:getAllJoueurRequest"></wsdl:input>
+			<wsdl:output message="tns:getAllJoueurResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPronosticByJoueur">
+			<wsdl:input message="tns:getPronosticByJoueurRequest"></wsdl:input>
+			<wsdl:output message="tns:getPronosticByJoueurResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PronostiqueSOAP" type="tns:PronostiqueInterface">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+
+	</wsdl:binding>
+	<wsdl:service name="PronostiqueService">
+		<wsdl:port binding="tns:PronostiqueSOAP" name="PronostiqueSOAP">
+			<soap:address location="http://localhost:9001/PronostiqueEndpoint" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

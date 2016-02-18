@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ListeDonneesClient xmlns="http://fr.enstimac.gipsi/gsi/donneesclient">
+	<InfoClient id="Audray Tautou" montant="2720" />
+	<InfoClient id="Clarisse Lasocisse" montant="50" />
+	<InfoClient id="Frederico Abenben" montant="5470" />
+</ListeDonneesClient>

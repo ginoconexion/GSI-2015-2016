@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="Matchs2.xsl"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Matchs2.xsd">
+    <!-- liste des matchs -->
+    <listMatchs>
+        <!-- matchs poule 1 -->
+        <match>
+            <date>2015-01-09</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>11</domicile>
+                <invite>12</invite>
+            </equipes>
+            <score victoire="invite">1-2</score>
+        </match>
+        <match>
+            <date>2015-02-09</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>11</domicile>
+                <invite>13</invite>
+            </equipes>
+            <score victoire="domicile">3-2</score>
+        </match>
+        <match>
+            <date>2015-03-09</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>11</domicile>
+                <invite>14</invite>
+            </equipes>
+            <score victoire="domicile">4-2</score>
+        </match>
+        <match>
+            <date>2015-04-09</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>12</domicile>
+                <invite>13</invite>
+            </equipes>
+            <score victoire="invite">5-1</score>
+        </match>
+        <match>
+            <date>2015-06-09</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>12</domicile>
+                <invite>14</invite>
+            </equipes>
+            <score victoire="domicile">5-2</score>
+        </match>
+        <match>
+            <date>2015-10-09</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>13</domicile>
+                <invite>14</invite>
+            </equipes>
+            <score victoire="invite">1-2</score>
+        </match>
+
+        <!-- matchs poule 2 -->
+
+        <match>
+            <date>2015-01-18</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>21</domicile>
+                <invite>22</invite>
+            </equipes>
+            <score victoire="domicile">2-2</score>
+        </match>
+        <match>
+            <date>2015-01-19</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>21</domicile>
+                <invite>23</invite>
+            </equipes>
+            <score victoire="invite">3-2</score>
+        </match>
+        <match>
+            <date>2015-01-20</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>21</domicile>
+                <invite>24</invite>
+            </equipes>
+            <score victoire="domicile">1-2</score>
+        </match>
+        <match>
+            <date>2015-01-21</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>22</domicile>
+                <invite>23</invite>
+            </equipes>
+            <score victoire="invite">0-2</score>
+        </match>
+        <match>
+            <date>2015-01-23</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>22</domicile>
+                <invite>24</invite>
+            </equipes>
+            <score victoire="invite">0-2</score>
+        </match>
+        <match>
+            <date>2015-01-24</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>23</domicile>
+                <invite>24</invite>
+            </equipes>
+            <score victoire="invite">0-2</score>
+        </match>
+
+
+        <!-- matchs poule 3 -->
+
+        <match>
+            <date>2015-10-01</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>31</domicile>
+                <invite>32</invite>
+            </equipes>
+            <score victoire="domicile">0-2</score>
+        </match>
+        <match>
+            <date>2015-10-02</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>31</domicile>
+                <invite>33</invite>
+            </equipes>
+            <score victoire="invite">0-2</score>
+        </match>
+        <match>
+            <date>2015-10-15</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>31</domicile>
+                <invite>34</invite>
+            </equipes>
+            <score victoire="domicile">3-2</score>
+        </match>
+        <match>
+            <date>2015-10-25</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>32</domicile>
+                <invite>33</invite>
+            </equipes>
+            <score victoire="invite">0-2</score>
+        </match>
+        <match>
+            <date>2015-10-30</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>32</domicile>
+                <invite>34</invite>
+            </equipes>
+            <score victoire="domicile">0-2</score>
+        </match>
+        <match>
+            <date>2015-10-23</date>
+            <groupe>1</groupe>
+            <equipes>
+                <domicile>33</domicile>
+                <invite>34</invite>
+            </equipes>
+            <score victoire="domicile">0-2</score>
+        </match>
+    </listMatchs>
+
+    <listEquipes>
+        <equipe id="France" flag="/flag/fra.png">
+            <position numGroupe="1" numEquipe="11"/>
+        </equipe>
+        <equipe id="Espagne" flag="/flag/esp.png">
+            <position numGroupe="2" numEquipe="21"/>
+        </equipe>
+        <equipe id="Allemagne" flag="/flag/ger.png">
+            <position numGroupe="3" numEquipe="31"/>
+        </equipe>
+        <equipe id="Angleterre" flag="/flag/eng.png">
+            <position numGroupe="4" numEquipe="41"/>
+        </equipe>
+        <equipe id="Portugal" flag="/flag/por.png">
+            <position numGroupe="5" numEquipe="51"/>
+        </equipe>
+        <equipe id="Belgique" flag="/flag/bel.png">
+            <position numGroupe="6" numEquipe="61"/>
+        </equipe>
+        <equipe id="Italie" flag="/flag/ita.png">
+            <position numGroupe="1" numEquipe="12"/>
+        </equipe>
+        <equipe id="Russie" flag="/flag/rus.png">
+            <position numGroupe="2" numEquipe="22"/>
+        </equipe>
+        <equipe id="Republique tcheque" flag="/flag/cze.png">
+            <position numGroupe="1" numEquipe="13"/>
+        </equipe>
+        <equipe id="Turquie" flag="/flag/tur.png">
+            <position numGroupe="1" numEquipe="14"/>
+        </equipe>
+        <equipe id="Suede" flag="/flag/swe.png">
+            <position numGroupe="2" numEquipe="23"/>
+        </equipe>
+        <equipe id="Republique Irlande" flag="/flag/irl.png">
+            <position numGroupe="2" numEquipe="24"/>
+        </equipe>
+        <equipe id="Suisse" flag="/flag/sui.png">
+            <position numGroupe="3" numEquipe="32"/>
+        </equipe>
+        <equipe id="Pologne" flag="/flag/pol.png">
+            <position numGroupe="3" numEquipe="33"/>
+        </equipe>
+        <equipe id="Islande" flag="/flag/isl.png">
+            <position numGroupe="3" numEquipe="34"/>
+        </equipe>
+        <equipe id="Autriche" flag="/flag/aut.png">
+            <position numGroupe="4" numEquipe="42"/>
+        </equipe>
+        <equipe id="Roumanie" flag="/flag/rou.png">
+            <position numGroupe="4" numEquipe="43"/>
+        </equipe>
+        <equipe id="Pays de Galles" flag="/flag/wal.png">
+            <position numGroupe="4" numEquipe="44"/>
+        </equipe>
+        <equipe id="Croatie" flag="/flag/cro.png">
+            <position numGroupe="5" numEquipe="52"/>
+        </equipe>
+        <equipe id="Ukraine" flag="/flag/ukr.png">
+            <position numGroupe="6" numEquipe="62"/>
+        </equipe>
+        <equipe id="Slovaquie" flag="/flag/slo.png">
+            <position numGroupe="5" numEquipe="53"/>
+        </equipe>
+        <equipe id="Hongrie" flag="/flag/hon.png">
+            <position numGroupe="6" numEquipe="63"/>
+        </equipe>
+        <equipe id="Albanie" flag="/flag/alb.png">
+            <position numGroupe="5" numEquipe="54"/>
+        </equipe>
+        <equipe id="Irlande du Nord" flag="/flag/nir.png">
+            <position numGroupe="6" numEquipe="64"/>
+        </equipe>
+    </listEquipes>
+</list>

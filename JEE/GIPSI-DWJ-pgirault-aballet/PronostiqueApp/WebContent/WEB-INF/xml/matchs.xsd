@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://emac.fr/gipsi/gsi/matchs" targetNamespace="http://emac.fr/gipsi/gsi/matchs"
+    elementFormDefault="qualified">
+<xs:simpleType name="typePoule">
+    <xs:restriction base="xs:integer">
+        <xs:pattern value="[1-6]{1}"/>
+    </xs:restriction>
+</xs:simpleType>
+    <xs:simpleType name="typeDate">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}-[0-9]{2}-[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+<xs:element name="drapeau">
+    <xs:complexType>
+        <xs:attribute name="src" type="xs:string"/>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="equipe">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="pays" type="xs:string"/>
+            <xs:element name="poule" type="typePoule"/>
+            <xs:element ref="drapeau"/>
+        </xs:sequence>
+        <xs:attribute name="score" type="xs:integer"/>
+        <xs:attribute name="id" type="xs:integer"/>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="match">
+    <xs:complexType>
+        <xs:sequence minOccurs="2" maxOccurs="2">
+            <xs:element ref="equipe"/>
+        </xs:sequence>
+        <xs:attribute name="date" type="typeDate"/>
+</xs:complexType>
+</xs:element>
+    <xs:element name="resultats">
+        <xs:complexType>
+            <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="match"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

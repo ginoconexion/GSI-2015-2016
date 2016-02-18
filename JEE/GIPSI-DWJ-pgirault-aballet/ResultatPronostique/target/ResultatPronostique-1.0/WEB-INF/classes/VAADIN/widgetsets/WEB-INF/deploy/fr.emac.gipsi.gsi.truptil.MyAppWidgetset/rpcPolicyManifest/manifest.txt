@@ -1,0 +1,2 @@
+# Module fr.emac.gipsi.gsi.truptil.MyAppWidgetset
+# RPC service class, partial path of RPC policy file

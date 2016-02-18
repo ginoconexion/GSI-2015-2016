@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:competition xmlns:p="http://fr.emac.gipsi/gsi/calendrier" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://fr.emac.gipsi/gsi/calendrier calendrier.xsd ">
+  <p:groupe id="A">
+    <p:match date="" equipe1="" />
+  </p:groupe>
+  <p:groupe id="B">
+    <p:match/>
+  </p:groupe>
+  <p:groupe id="C">
+    <p:match/>
+  </p:groupe>
+  <p:groupe id="D">
+    <p:match/>
+  </p:groupe>
+  <p:groupe id="E">
+    <p:match/>
+  </p:groupe>
+  <p:groupe id="F">
+    <p:match/>
+  </p:groupe>
+</p:competition>

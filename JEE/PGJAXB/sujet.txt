@@ -1,0 +1,16 @@
+Vous devez réaliser un petit programme qui transforme un fichier XML en un autre fichier XML. Cette transformation consiste à transformer les données d’une facture en description de ce que chaque personne a acheté.
+Vous avez à votre disposition deux XSD décrivant les données d’entrées et de sorties. Les données d’entrées sont sauvegardées dans le fichier : factures.xml. Les données de sorties devront être sauvegardées dans le fichier : donneesClient-VotreLogin.xml (remplacer VotreLogin par votre login).
+Pour réaliser ce programme, vous pourrez vous baser sur JAXB ou un parser DOM ou un parser SAX. Comme vous voulez tant que le programme marche.
+Vous devez donc faire un programme qui devra :
+1)	lire le fichier XML.
+2)	Transformer les données des factures en données client.
+3)	Ecrire le fichier XML respectant la XSD DonneesClient.xsd.
+
+Le fichier DonneesClient.xml est un exemple du résultat attendu.
+Le prix des différents produits sont les suivants (que des entiers) :
+-	Iphone5G : 100
+-	IpadMini : 200
+-	IMac : 2200
+-	Iphone3G : 50
+-	Tosh80 : 20
+-	CDRx20 : 10

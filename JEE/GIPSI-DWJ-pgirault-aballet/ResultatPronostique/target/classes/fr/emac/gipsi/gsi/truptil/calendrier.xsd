@@ -1,0 +1,34 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://fr.emac.gipsi/gsi/calendrier" targetNamespace="http://fr.emac.gipsi/gsi/calendrier"
+	elementFormDefault="qualified">
+
+	<xsd:element name="match">
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:string" />
+			<xsd:attribute name="date" type="xsd:date" />
+			<xsd:attribute name="equipe1" type="xsd:string" />
+			<xsd:attribute name="equipe2" type="xsd:string" />
+			<xsd:attribute name="score1" type="xsd:int" />
+			<xsd:attribute name="score2" type="xsd:int" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="groupe">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="match" minOccurs="1" maxOccurs="unbounded" />
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="competition">
+	  <xsd:complexType>
+	  	<xsd:sequence>
+	  		<xsd:element ref="groupe" minOccurs="1" maxOccurs="unbounded" />
+	  	</xsd:sequence>
+	  	<xsd:attribute name="id" type="xsd:string" />
+	  </xsd:complexType>
+	</xsd:element>
+	
+</xsd:schema>

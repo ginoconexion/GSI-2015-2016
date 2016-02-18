@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="Matchs1.xsl"?>
+<competition  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns="http://fr.emac.gipsi/gsi/calendrier"
+			xsi:schemaLocation="http://fr.emac.gipsi/gsi/calendrier Matchs1.xsd"
+			id="euro16">
+    <!-- liste des matchs par poule -->
+    <matchs>
+        <!-- matchs poule 4 -->
+        <!-- score1 correspond au score de equipe1 et score2 de equipe2 -->
+        <groupe id="4">
+            <match id="412" date="2015-01-26+01:00" equipe1="41" equipe2="42" score1="5" score2="2"/>
+            <match id="413" date="2015-02-26+01:00" equipe1="41" equipe2="43" score1="4" score2="3"/>
+            <match id="414" date="2015-03-26+01:00" equipe1="41" equipe2="44" score1="2" score2="4"/>
+            <match id="423" date="2015-04-26+01:00" equipe1="42" equipe2="43" score1="1" score2="0"/>
+            <match id="424" date="2015-05-26+01:00" equipe1="42" equipe2="44" score1="2" score2="1"/>
+            <match id="434" date="2015-08-26+01:00" equipe1="43" equipe2="44" score1="3" score2="3"
+            />
+        </groupe>
+        <!-- matchs poule 5 -->
+        <groupe id="5">
+            <match id="512" date="2015-09-26+01:00" equipe1="51" equipe2="52" score1="5" score2="45"/>
+            <match id="513" date="2015-02-26+01:00" equipe1="51" equipe2="53" score1="8" score2="1"/>
+            <match id="514" date="2015-10-26+01:00" equipe1="51" equipe2="54" score1="5" score2="2"/>
+            <match id="523" date="2015-03-26+01:00" equipe1="52" equipe2="53" score1="2" score2="3"/>
+            <match id="524" date="2015-04-26+01:00" equipe1="52" equipe2="54" score1="1" score2="4"/>
+            <match id="534" date="2015-05-05+01:00" equipe1="53" equipe2="54" score1="3" score2="2"
+            />
+        </groupe>
+        <!-- matchs poule 6 -->
+        <groupe id="6">
+            <match id="612" date="2015-10-15+01:00" equipe1="61" equipe2="62" score1="0" score2="3"/>
+            <match id="613" date="2015-02-15+01:00" equipe1="61" equipe2="63" score1="2" score2="4"/>
+            <match id="614" date="2015-05-15+01:00" equipe1="61" equipe2="64" score1="4" score2="2"/>
+            <match id="623" date="2015-01-15+01:00" equipe1="62" equipe2="63" score1="6" score2="6"/>
+            <match id="624" date="2015-03-15+01:00" equipe1="62" equipe2="64" score1="0" score2="5"/>
+            <match id="634" date="2015-05-15+01:00" equipe1="63" equipe2="64" score1="1" score2="4"/>
+        </groupe>
+    </matchs>
+    <listEquipes>
+        <equipe id="France" flag="/flag/fra.png">
+            <position numGroupe="1" numEquipe="11"/>
+        </equipe>
+        <equipe id="Espagne" flag="/flag/esp.png">
+            <position numGroupe="2" numEquipe="21"/>
+        </equipe>
+        <equipe id="Allemagne" flag="/flag/ger.png">
+            <position numGroupe="3" numEquipe="31"/>
+        </equipe>
+        <equipe id="Angleterre" flag="/flag/eng.png">
+            <position numGroupe="4" numEquipe="41"/>
+        </equipe>
+        <equipe id="Portugal" flag="/flag/por.png">
+            <position numGroupe="5" numEquipe="51"/>
+        </equipe>
+        <equipe id="Belgique" flag="/flag/bel.png">
+            <position numGroupe="6" numEquipe="61"/>
+        </equipe>
+        <equipe id="Italie" flag="/flag/ita.png">
+            <position numGroupe="1" numEquipe="12"/>
+        </equipe>
+        <equipe id="Russie" flag="/flag/rus.png">
+            <position numGroupe="2" numEquipe="22"/>
+        </equipe>
+        <equipe id="Republique tcheque" flag="/flag/cze.png">
+            <position numGroupe="1" numEquipe="13"/>
+        </equipe>
+        <equipe id="Turquie" flag="/flag/tur.png">
+            <position numGroupe="1" numEquipe="14"/>
+        </equipe>
+        <equipe id="Suede" flag="/flag/swe.png">
+            <position numGroupe="2" numEquipe="23"/>
+        </equipe>
+        <equipe id="Republique Irlande" flag="/flag/irl.png">
+            <position numGroupe="2" numEquipe="24"/>
+        </equipe>
+        <equipe id="Suisse" flag="/flag/sui.png">
+            <position numGroupe="3" numEquipe="32"/>
+        </equipe>
+        <equipe id="Pologne" flag="/flag/pol.png">
+            <position numGroupe="3" numEquipe="33"/>
+        </equipe>
+        <equipe id="Islande" flag="/flag/isl.png">
+            <position numGroupe="3" numEquipe="34"/>
+        </equipe>
+        <equipe id="Autriche" flag="/flag/aut.png">
+            <position numGroupe="4" numEquipe="42"/>
+        </equipe>
+        <equipe id="Roumanie" flag="/flag/rou.png">
+            <position numGroupe="4" numEquipe="43"/>
+        </equipe>
+        <equipe id="Pays de Galles" flag="/flag/wal.png">
+            <position numGroupe="4" numEquipe="44"/>
+        </equipe>
+        <equipe id="Croatie" flag="/flag/cro.png">
+            <position numGroupe="5" numEquipe="52"/>
+        </equipe>
+        <equipe id="Ukraine" flag="/flag/ukr.png">
+            <position numGroupe="6" numEquipe="62"/>
+        </equipe>
+        <equipe id="Slovaquie" flag="/flag/slo.png">
+            <position numGroupe="5" numEquipe="53"/>
+        </equipe>
+        <equipe id="Hongrie" flag="/flag/hon.png">
+            <position numGroupe="6" numEquipe="63"/>
+        </equipe>
+        <equipe id="Albanie" flag="/flag/alb.png">
+            <position numGroupe="5" numEquipe="54"/>
+        </equipe>
+        <equipe id="Irlande du Nord" flag="/flag/nir.png">
+            <position numGroupe="6" numEquipe="64"/>
+        </equipe>
+    </listEquipes>
+</competition>

@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>fr.emac.gipsi.gsi</groupId>
+	<artifactId>WSPronostique</artifactId>
+	<name>WSPronostique</name>
+	<version>0.1-SNAPSHOT</version>
+
+	<properties>
+		<cxf.version>3.1.4</cxf.version>
+	</properties>
+
+	<build>
+		<finalName>${artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<!-- Informations pour la génération du skeleton et des stubs -->
+						<configuration>
+							<wsdlOptions>
+								<!-- skeleton -->
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/pronostique.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-server</extraarg> 
+										<extraarg>-impl</extraarg> 
+									</extraargs>
+								</wsdlOption>
+								<!-- stubs -->
+								<!-- <wsdlOption>
+									<wsdl>${basedir}/src/main/resources/stubs/test.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-client</extraarg> 
+									</extraargs>
+								</wsdlOption>-->
+							</wsdlOptions>
+							<sourceRoot>${basedir}/target/generated-sources</sourceRoot>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency> 
+		  <groupId>org.slf4j</groupId>
+		  <artifactId>slf4j-log4j12</artifactId>
+		  <version>1.7.5</version>
+		</dependency>
+		<dependency>
+              <groupId>org.mongodb.morphia</groupId>
+              <artifactId>morphia</artifactId>
+              <version>1.0.1</version>
+          </dependency>
+	</dependencies>
+	
+</project>

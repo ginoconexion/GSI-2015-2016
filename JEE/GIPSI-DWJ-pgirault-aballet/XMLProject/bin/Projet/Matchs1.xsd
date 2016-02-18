@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://fr.emac.gipsi/gsi/calendrier"
+	xmlns="http://fr.emac.gipsi/gsi/calendrier"
+	elementFormDefault="qualified">
+	<xs:include schemaLocation="Equipes.xsd"/> 
+
+	<xs:element name="match">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:integer" use="required"></xs:attribute>
+			<xs:attribute name="date" type="xs:string" use="required"></xs:attribute>
+			<xs:attribute name="equipe1" type="xs:integer" use="required"></xs:attribute>
+			<xs:attribute name="equipe2" type="xs:integer" use="required"></xs:attribute>
+			<xs:attribute name="score1" type="xs:integer" use="required"></xs:attribute>
+			<xs:attribute name="score2" type="xs:integer" use="required"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="groupe">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="match"></xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:integer" use="required"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="matchs">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="groupe"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="competition" xmlns="http://fr.emac.gipsi/gsi/calendrier">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element ref="matchs" maxOccurs="1"></xs:element>
+    			<xs:element ref="listEquipes"></xs:element>
+    		</xs:sequence>
+    		<xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+    	</xs:complexType>
+    </xs:element>
+</xs:schema>
