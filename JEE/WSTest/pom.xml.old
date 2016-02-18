@@ -1,0 +1,168 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>fr.isis</groupId>
+	<artifactId>helloworld</artifactId>
+	<name>Helloworld</name>
+	<version>0.1-SNAPSHOT</version>
+
+	<properties>
+		<!-- Nom de la classe du serveur -->
+		<server.class>fr.isis.helloworld.HelloworldService_Server</server.class>
+		<cxf.version>2.7.7</cxf.version>
+	</properties>
+
+	<build>
+		<finalName>${artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<!-- Informations pour la génération du skeleton et des stubs -->
+						<configuration>
+							<wsdlOptions>
+								<!-- skeleton -->
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/helloworld.wsdl</wsdl>
+									<!--<extraargs>
+										<extraarg>-server</extraarg> 
+										<extraarg>-impl</extraarg> 
+									</extraargs> -->
+								</wsdlOption>
+								<!-- stubs -->
+								<!-- 
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/stubs/test.wsdl</wsdl>
+									<wsdl>${basedir}/src/main/resources/stubs/test.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-client</extraarg> 
+									</extraargs>
+								</wsdlOption>
+								 -->
+							</wsdlOptions>
+							<sourceRoot>${basedir}/target/generated-sources</sourceRoot>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>scripts</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<echo message="Copy script file" />
+								<copy todir="./target/scripts" overwrite="yes"
+									includeEmptyDirs="no">
+									<fileset dir="./src/main/resources/scripts">
+									</fileset>
+								</copy>
+								<echo message="Copy assembly file" />
+								<copy todir="./target/assembly" overwrite="yes"
+									includeEmptyDirs="no">
+									<fileset dir="./src/main/resources/assembly">
+									</fileset>
+								</copy>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<finalName>server</finalName>
+					<archive>
+						<manifest>
+							<mainClass>${server.class}</mainClass>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-4</version>
+				<executions>
+					<execution>
+						<id>dev-assembly</id>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<attach>false</attach>
+							<descriptors>
+								<descriptor>
+									target/assembly/dev.xml
+								</descriptor>
+							</descriptors>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>attached</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency> 
+		  <groupId>org.slf4j</groupId>
+		  <artifactId>slf4j-log4j12</artifactId>
+		  <version>1.7.5</version>
+		</dependency>
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>maven</id>
+			<url>http://repo1.maven.org/maven2/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+</project>

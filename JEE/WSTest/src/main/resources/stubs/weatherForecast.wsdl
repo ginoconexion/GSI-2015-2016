@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="WeatherForecast" targetNamespace="http://www.isis.fr/WeatherForecast/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.isis.fr/WeatherForecast/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xsd:schema targetNamespace="http://www.isis.fr/WeatherForecast/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.isis.fr/WeatherForecast/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="getCities" type="xsd:string"/>
+      <xsd:element name="getCitiesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Cities" type="tns:CitiesType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="CitiesType">
+      	<xsd:sequence>
+      		<xsd:element maxOccurs="unbounded" minOccurs="1" name="City" type="xsd:string"/>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getWeather">
+                <xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="City" type="xsd:string"/>
+            		</xsd:sequence>
+            	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWeatherResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="Date" type="xsd:string"/>
+            			<xsd:element name="Temperature" type="xsd:string">
+            			</xsd:element>
+            			<xsd:element name="Humidity" type="xsd:string">
+            			</xsd:element>
+            			<xsd:element name="UselessInformation" type="xsd:string">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getWeatherResponse">
+    <wsdl:part element="tns:getWeatherResponse" name="output">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCitiesResponse">
+    <wsdl:part element="tns:getCitiesResponse" name="output">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getWeatherRequest">
+    <wsdl:part element="tns:getWeather" name="input">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCitiesRequest">
+    <wsdl:part element="tns:getCities" name="input">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WeatherForecastInterface">
+    <wsdl:operation name="getCities">
+      <wsdl:input message="tns:getCitiesRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getCitiesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWeather">
+      <wsdl:input message="tns:getWeatherRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getWeatherResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WeatherForecastSOAP" type="tns:WeatherForecastInterface">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCities">
+      <soap:operation soapAction="http://www.isis.fr/WeatherForecast/getCities"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWeather">
+      <soap:operation soapAction="http://www.isis.fr/WeatherForecast/getWeather"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WeatherForecastService">
+    <wsdl:port binding="tns:WeatherForecastSOAP" name="WeatherForecastServiceEndpoint">
+      <soap:address location="http://ws.interopsys.fr/weatherforecast/services/WeatherForecast"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
