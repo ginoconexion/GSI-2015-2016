@@ -1,0 +1,58 @@
+[% USE Dumper %]
+<!DOCTYPE html>
+<html lang="en">
+	[% include layouts/template/head.tt  %]
+	<body>
+	[% include layouts/template/navbar.tt %]
+    
+<!-- Main -->
+<div class="container-fluid">
+    <div class="row">
+    	[% if session.user.admin == 1 %]
+        <div class="col-sm-2">
+            [% include layouts/template/leftColumn.tt %]
+        </div>
+        [% else %]
+        <div class="col-sm-2">
+        </div>
+         [% end %]
+        <!-- /col-3 -->
+        <div class="col-sm-10">
+			<div class="col-sm-10">
+				<img src="[% uri_base %]/images/logo-emacovoit2016.png" height="70px" />
+				<a href="[% uri_base %]a-propos/">
+				<img class="pull-right" src="[% uri_base %]/images/logo-I2D.png" height="70px" />
+				</a>
+				<hr>
+			</div>
+
+            <div class="row">
+           		<div class="col-sm-10">
+           		<!-- [% Dumper.dump_html(messages) %] -->
+        		[% foreach message = messages %]
+            	<div class="alert alert-[% message.classe %]" role="alert">
+                	<strong>[% loop.count %]/[% loop.size %]</strong>[% message.texte %]
+            	</div>
+            	[% end %]
+            	[% content %]
+		</div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="text-center green">Site créé par et pour l'Ecole des Mines d'Albi-Carmaux
+	<img src="[% uri_base %]/images/logo-mines-albi-2013.png" height="30px"/>
+	Powered by GSIGN
+</div>
+
+
+<!-- script references -->
+	<script>
+//$(document).ready(function(){$(".alert").addClass("in").fadeOut(4500);
+
+/* swap open/close side menu icons */
+$('[data-toggle=collapse]').click(function(){
+  	// toggle icon
+  	$(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
+});
+		</script>

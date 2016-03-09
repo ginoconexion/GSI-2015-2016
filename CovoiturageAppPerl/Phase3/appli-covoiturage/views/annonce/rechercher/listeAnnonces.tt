@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+        	<i class="glyphicon glyphicon-user pull-right"></i>
+            <h5>
+            	Mes annonces 
+				[% if type == "listeSauvegardes" %]
+				sauvegardées :
+				[% else %]
+				publiées :
+				[% end %]
+			</h5>
+       </div>
+	</div>
+	<div class="panel-body">
+	<div>
+	[% USE date %]
+	[% if type == "listeSauvegardes" %]
+		[% foreach sauvegarde in sauvegardes %]
+			[% annonce = sauvegarde.id_covoiturage %]
+			[% include annonce/rechercher/vueElementListe.tt %]
+		[% end %]
+	[% else %]
+		[% foreach annonce in annonces %]
+			[% include annonce/rechercher/vueElementListe.tt %]
+		[% end %]
+	[% end %]
+
+	</div>
+</div>

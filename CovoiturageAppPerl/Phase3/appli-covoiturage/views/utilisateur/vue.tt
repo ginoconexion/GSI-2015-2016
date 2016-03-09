@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+        	<i class="glyphicon glyphicon-user pull-right"></i>
+            <h5>
+            	Mon profil : [% utilisateur.prenom %] [% utilisateur.nom %] [% utilisateur.type %]
+			</h5>
+       </div>
+	</div>
+	<div class="panel-body">
+		<form class="form-horizontal" action="[% url_validation %]" method="post">
+		<fieldset>
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="select">Promo/Fonction</label>
+					<div class="col-sm-6">
+					[% if utilisateur.type == "" %]
+						[% include template/champ.tt nom="type" value="${utilisateur.type}" placeholder="(ex: Enseignant Chercheur, Doctorant)" disabled="disabled" %]
+					[% else %]
+						[% include template/champ.tt nom="type" value="${utilisateur.type}" disabled="true" %]
+					[% end %]
+					</div>
+					[% include template/error.tt msg="${msgs.type}" %]
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label" >Mail </label>
+					<div class="col-sm-6">
+						[% include template/champ.tt nom="mail" value="${utilisateur.mail}" placeholder="Entrez votre email" %] 
+					</div>
+					[% include template/error.tt msg="${msgs.mail}" %] 
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="select">Numéro</label>
+					<div class="col-sm-6">
+						[% include template/champ.tt nom="telephone" value="${utilisateur.telephone}" placeholder="XXXXXXXXXX" %]
+					</div>
+					[% include template/error.tt msg="${msgs.telephone}" %]
+				</div>
+				<div class="form-group">
+					<div class="col-sm-6 col-sm-offset-4">
+						<a class="btn btn-default" href="[% uri_base %]"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span> Retour</a>
+						<button class="btn btn-info" type="reset">Reset <span aria-hidden="true" class="glyphicon glyphicon-repeat"></span></button>
+						<button class="btn btn-primary" type="submit">Valider <span aria-hidden="true" class="glyphicon glyphicon-ok"></span></button>
+					</div>
+				</div>
+		</fieldset>
+	</form>
+	</div>
+</div>

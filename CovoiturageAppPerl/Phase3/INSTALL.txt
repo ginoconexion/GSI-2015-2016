@@ -1,0 +1,30 @@
+
+Packages qui seront éventuellement à installer :
+
+DateTime::Format::Strptime
+Data::FormValidator::Constraints::DateTime
+POSIX
+Math::Trig
+Math::Round
+Net::LDAP
+Unicode::String
+JSON
+URI
+LWP::UserAgent
+
+L'application est executable en standalone avec un utilisateur par défaut : pgirault
+my $login = "pgirault"; dans le fichier myapp.pm
+
+Une fois le déploiement effectué. Il faut décommenter les lignes dans le fichier myapp.pm: 
+
+Dancer::Request->new(env => \%ENV);
+
+my $login = request->user();
+
+et comment la ligne : my $login = "pgirault";
+
+Les commentaires précisent cela dans le fichier. Le fait des décommenter ces lignes va permettre d'accéder à l'utilisateur fixé par LDAP
+
+
+
+

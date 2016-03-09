@@ -1,0 +1,17 @@
+	<div id="etapes" data-prototype="&lt;div class=&quot;form-group&quot;&gt;
+	&lt;label class=&quot;col-sm-4 control-label&quot;&gt;__name__label_&lt;/label&gt;
+	&lt;div class=&quot;col-sm-6&quot;&gt;
+		&lt;div class=&quot;input-group&quot;&gt;
+			&lt;span class=&quot;input-group-addon&quot; id=&quot;basic-addon1&quot;&gt;&lt;span
+				aria-hidden=&quot;true&quot; class=&quot;glyphicon glyphicon-road&quot;&gt;&lt;/span&gt;&lt;/span&gt; &lt;input
+				type=&quot;text&quot; autocomplete=&quot;off&quot; class=&quot;form-control autocomplete&quot;
+				name=&quot;etape[__index__][]&quot;
+				aria-describedby=&quot;basic-addon1&quot;&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;ul style=&quot;margin-top: 10%; width: 300px; display: none;&quot;
+				class=&quot;liste autocomplete-container&quot;&gt;&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;">
+		</div>

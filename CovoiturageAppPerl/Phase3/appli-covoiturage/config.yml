@@ -1,0 +1,57 @@
+# This is the main configuration file of your Dancer app
+# env-related settings should go to environments/$env.yml.
+# All the settings in this file will be loaded at Dancer's startup.
+
+# Your application's name
+appname: "covoiturage"
+
+# The default layout to use for your application (located in
+# views/layouts/main.tt)
+layout: "main"
+
+# When the charset is set to UTF-8 Dancer will handle for you
+# all the magic of encoding and decoding. You should not care
+# about unicode within your app when this setting is set (recommended).
+charset: "UTF-8"
+
+# template engine
+# simple: default and very basic template engine
+# template_toolkit: TT
+
+#template: "simple"
+
+template: "template_toolkit"
+
+
+engines:
+    template_toolkit:
+        start_tag: '[%'
+        end_tag:   '%]'
+        encoding: "utf8"
+plugins:
+    DBIC:
+#        covoiturage:
+#           schema_class: DB::Covoiturage
+#           dsn: dbi:mysql:covoiturage
+#           user: test
+#           password: test
+#           options:
+#               RaiseError: 1
+#               mysql_enable_utf8: 1
+        covoiturage:
+           schema_class: DB::Covoiturage
+           dsn: dbi:mysql:gsi16gn:sgbd-eleves.mines-albi.fr:3306
+           user: gsi16gn
+           password: gd9sy2
+           options:
+               RaiseError: 1
+               mysql_enable_utf8: 1
+# For session support enable the following line and see Dancer::Session
+# session: "YAML"
+
+logger: 'console'
+log: 'debug'
+startup_info: 1
+show_errors: 1
+template: 'template_toolkit'
+session: 'YAML'

@@ -1,0 +1,44 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+        	<i class="glyphicon glyphicon-star pull-right"></i>
+            <h5>A propos</h5>
+       </div>
+	</div>
+	<div class="panel-body">
+		<fieldset>
+			<div class="col-sm-3 text-center">
+			<img src="[% uri_base %]/images/logo-I2D.png" height="100px" />
+			</div>
+			<div class="col-sm-9 text-justify">
+			I2D, Ingénieurs pour un Développement Durable, est une association loi 1901 créée en 2006. Elle a pour but de promouvoir le développement durable au sein de l école des Mines Albi-Carmaux. Elle sensibilise les étudiants au développement durable, pour que ce dernier devienne un réflexe naturel dans leur vie future. Pour cela, I2D aide les étudiants a réaliser leurs projets en faveur du développement durable.
+			L association gere plusieurs projets différents, et a été classée parmi les Association de l'Année 2012 et 2013 au classement ANEO/Le Point.
+			</div>
+		</fieldset>
+		<hr>
+		<fieldset>
+			<div class="col-sm-3 text-center">
+			<img src="[% uri_base %]/images/logo-gsign.png" height="150px" />
+			</div>
+			<div class="col-sm-1 text-justify">
+				Equipe GSIGN - ifie2016
+			</div>
+			<div class="col-sm-2 text-center">
+				<img src="[% uri_base %]/images/glecomte.jpg" height="120px" />
+				Grégoire Lecomte
+			</div>
+			<div class="col-sm-2 text-center">
+				<img src="[% uri_base %]/images/pgirault.jpg" height="120px" />
+				Paul Girault
+			</div>
+			<div class="col-sm-2 text-center">
+				<img src="[% uri_base %]/images/aballet.jpg" height="120px" />
+				Arnaud Ballet
+			</div>
+			<div class="col-sm-2 text-center">
+				<img src="[% uri_base %]/images/spettier.jpg" height="120px" />
+				Sol&egrave;ne Pettier
+			</div>
+		</fieldset>
+	</div>
+</div>

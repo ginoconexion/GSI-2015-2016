@@ -1,0 +1,47 @@
+[% date_annonce = date.format(annonce.date_depart, format='%d-%m-%Y') %]
+				[% heure_annonce = date.format(annonce.date_depart, format='%H:%M') %]
+				<div class="col-sm-10">
+					<h4 id="type-blockquotes">Le [% date_annonce %] à [% heure_annonce %]</h4>
+				</div>
+				<div class="col-sm-6">
+					<div class="bs-component">
+	    				<blockquote>
+	        				<p>[% annonce.id_lieu_depart.nom %][% foreach etape in annonce.id_lieus %] - [% etape.nom %] [% end %]- [% annonce.id_lieu_destination.nom %]</p>
+		            		<small>[% annonce.id_utilisateur.prenom %] [% annonce.id_utilisateur.nom %] <cite title="Source Title">[% annonce.id_utilisateur.type %]</cite></small>	            
+		        		</blockquote>
+	    			<div class="btn btn-primary btn-xs" id="source-button" style="display: none;">&lt; &gt;</div>
+	    			</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="bs-component">
+	    				<blockquote class="blockquote-reverse">
+	       					<p>[% if annonce.prix %][% annonce.prix %] € [% end %]</p>
+	            			<p><em>[% annonce.nombre_place %]</em> place[% if annonce.nombre_place > 1%]s[% end %]</p>
+	        			</blockquote>
+	    			</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="row">
+						<div class="col-sm-6">
+							<a class="btn btn-default align" href="[% uri_base %]annonce/[% annonce.id_type_covoiturage.id %]/[% annonce.id %]/"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></a>
+						</div>
+						<div class="col-sm-6">
+							[% if type == "listeSauvegardes" %]
+								[% url_suppression = "${uri_base}sauvegarder/supprimer/${annonce.id}/" %]
+							[% else %]
+								[% url_suppression = "${uri_base}annonce/supprimer/${annonce.id_type_covoiturage.id}/${annonce.id}/" %]
+							[% end %]
+							<a class="btn btn-default align" href="[% url_suppression %]"><span aria-hidden="true" class="glyphicon glyphicon-trash"></span></a>
+						</div>
+					</div>
+					<br>
+						[% if type != "listeSauvegardes" %]
+					<div class="row">
+						<div class="col-sm-12">
+							<a class="btn btn-default align" href="[% uri_base %]annonce/modifier/[% annonce.id_type_covoiturage.id %]/[% annonce.id %]/"><span aria-hidden="true"
+							class="glyphicon glyphicon-pencil"></span></a>
+					</div>
+				</div>
+					[% end %]
+			</div>
+				

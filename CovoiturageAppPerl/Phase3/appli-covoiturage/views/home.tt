@@ -1,0 +1,57 @@
+<h2 class="text-center">Bienvenue sur EMACovoit' : le Blablacar des Mines d'Albi</h2>
+<hr>
+<h4 class="text-center">Que désirez vous faire ?</h4>
+<br>
+<div>
+	<div class="col-sm-6">
+    	<div class="dropdown">
+  				<a class="btn btn-primary align" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    			<h4><span aria-hidden="true" class="glyphicon glyphicon-road"></span>  Rechercher un covoiturage <span class="caret"></span></h4>
+  			</a>
+  			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    			<li><a href="[% uri_base %][% routes.rechercher.albi %]">Dans Albi</a></li>
+   	 			<li><a href="[% uri_base %][% routes.rechercher.albiToulouse %]">Albi <span aria-hidden="true" class="glyphicon glyphicon-resize-horizontal"></span> Toulouse</a></li>
+    			<li><a href="[% uri_base %][% routes.rechercher.france %]">En France</a></li>
+  			</ul>
+		</div>
+	</div>
+	<div class="col-sm-6">
+  		<a href="[% uri_base %]annonce/publier/" class="btn btn-primary align" type="button" aria-haspopup="true" aria-expanded="true">
+    	<h4><span aria-hidden="true" class="glyphicon glyphicon-comment"></span>  Publier une annonce</h4>
+  		</a>
+	</div>
+	</div>
+</div>
+</div>
+
+[% if session.user.admin == 1 %]
+<div class="col-sm-10">
+<hr>
+<h4 class="text-center">Administration de l'application</h4>
+<hr>
+<div class="row">
+	<div class="col-sm-4 text-center">
+		<a href="[% uri_base %]admin/database/clean/" class="btn btn-default" type="button" aria-haspopup="true" aria-expanded="true">
+     	<i class="glyphicon glyphicon-cog"></i>
+     	<br>
+    	Supprimer annonces obsolètes
+  		</a>
+	</div>
+	<div class="col-sm-4 text-center">
+		<a href="[% uri_base %]admin/albi/lieu/liste/" class="btn btn-default" type="button" aria-haspopup="true" aria-expanded="true">
+     	<i class="glyphicon glyphicon-cog"></i>
+     	<br>
+    	Gérer la liste des lieux dans Albi
+  		</a>
+	</div>
+	<div class="col-sm-4 text-center">
+		<a href="[% uri_base %]utilisateur/liste/" class="btn btn-default" type="button" aria-haspopup="true" aria-expanded="true">
+     	<i class="glyphicon glyphicon-user"></i>
+     	<br>
+    	Gérer la liste des membres
+  		</a>
+	</div>
+</div>
+<hr>
+[% end %]
+</div>

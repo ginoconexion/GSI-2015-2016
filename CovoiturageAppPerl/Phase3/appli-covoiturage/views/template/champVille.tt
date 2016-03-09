@@ -1,0 +1,4 @@
+<div class="input-group">
+	<span class="input-group-addon" id="basic-addon1"><span aria-hidden="true" class="glyphicon glyphicon-road"></span></span>
+	<input type="text" autocomplete="off" class="form-control autocomplete nom" name="[% typeVille %].nom" value="[% nom_lieu %]" placeholder="[% placeholder %]" aria-describedby="basic-addon1">
+</div>

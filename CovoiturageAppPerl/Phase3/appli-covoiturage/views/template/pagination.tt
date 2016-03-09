@@ -1,0 +1,12 @@
+<ul class="pagination">
+  [% foreach p in [ 1 .. nbPages ] %]
+    <li [% if p == page %] class="active"[% end %]>
+      [% if type.code == 'albi' %]
+      [% url_params = "?id_lieu_depart=${annonce.lieu_depart.id}&id_lieu_destination=${annonce.lieu_destination.id}&date=${annonce.lieu_destination.id}" %]
+      [% else %]
+      [% url_params = "?depart[nom]=${annonce.lieu_depart.nom}&depart[latitude]=${annonce.lieu_depart.latitude}&depart[longitude]=${annonce.lieu_depart.longitude}&destination[nom]=${annonce.lieu_destination.nom}&destination[latitude]=${annonce.lieu_destination.latitude}&destination[longitude]=${annonce.lieu_destination.longitude}&date=${annonce.date_depart}" %]
+      [% end %]
+      <a href="[% url_validation %][% url_params %]&page=[% p %]">[% p %]</a>
+    </li>
+  [% end %]
+</ul>

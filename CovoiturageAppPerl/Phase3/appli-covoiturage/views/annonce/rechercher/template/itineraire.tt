@@ -1,0 +1,22 @@
+[% if a.id_lieu_depart.nom == annonce.id_lieu_depart.nom %]
+	<strong>[% a.id_lieu_depart.nom %]</strong>
+[% else %]
+	[% a.id_lieu_depart.nom %]
+[% end %] 
+
+[% foreach etape in a.id_lieus %] 
+- 
+	[% if etape.nom == annonce.id_lieu_depart.nom %]
+		<strong>[% etape.nom %]</strong>
+	[% elsif etape.nom == annonce.id_lieu_destination.nom %]
+		<strong>[% etape.nom %]</strong>
+	[% else %]
+		[% etape.nom %]
+	[% end %]
+[% end %]
+-
+[% if a.id_lieu_destination.nom == annonce.id_lieu_destination.nom %]
+<strong>[% a.id_lieu_destination.nom %]</strong>
+[% else %]
+[% a.id_lieu_destination.nom %]
+[% end %]

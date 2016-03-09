@@ -1,0 +1,36 @@
+[% USE date %]
+[% foreach annonce in annonces %]
+
+	<div class="row">
+		<div class="col-sm-12 boutonliste">
+			
+				<a href="[% uri_base %]annonce/[% annonce.id_type_covoiturage.id %]/[% annonce.id %]/">
+				
+				[% date_annonce = date.format(annonce.date_depart, format='%d-%m-%Y') %]
+				[% heure_annonce = date.format(annonce.date_depart, format='%H:%M') %]
+				<div class="col-sm-10 listeannoncevert">
+					<h4 id="type-blockquotes">Le [% date_annonce %] à [% heure_annonce %]</h4>
+				</div>
+				<div class="col-sm-6 listeannoncevert">
+					<div class="bs-component">
+	    				<blockquote>
+	        				<p>[% annonce.id_lieu_depart.nom %][% foreach etape in etapes %] - [% etape.nom %] [% end %]- [% annonce.id_lieu_destination.nom %]</p>
+		            		<small>[% annonce.id_utilisateur.prenom %] [% annonce.id_utilisateur.nom %] <cite title="Source Title">[% annonce.id_utilisateur.type %]</cite></small>	            
+		        		</blockquote>
+	    			<div class="btn btn-primary btn-xs" id="source-button" style="display: none;">&lt; &gt;</div>
+	    			</div>
+				</div>
+				<div class="col-sm-6 listeannoncevert">
+					<div class="bs-component">
+	    				<blockquote class="blockquote-reverse">
+	       					<p>[% if annonce.prix %][% annonce.prix %] € [% end %]</p>
+	            			<p><em>[% annonce.nombre_place %]</em> place[% if annonce.nombre_place > 1%]s[% end %]</p>
+	        			</blockquote>
+	    			</div>
+				</div>
+				</a>
+			
+		</div>
+	</div>
+
+[% end %]

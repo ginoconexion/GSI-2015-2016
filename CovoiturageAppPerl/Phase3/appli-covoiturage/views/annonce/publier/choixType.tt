@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+        	<i class="glyphicon glyphicon-comment pull-right"></i>
+            <h5>
+            	Choix du type de covoiturage
+			</h5>
+       </div>
+	</div>
+	<div class="panel-body">
+		<form class="form-horizontal align" action="[% url_validation %]" method="post">
+		<fieldset>
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="select">Type de covoiturage</label>
+					<div class="col-sm-4">
+						<select id="select" class="form-control" name="id_type_covoiturage">
+							<option selected="selected" value=""> Selectionnez un type de covoiturage </option>
+							[% foreach type = types %]
+							<option value="[% type.id %]" [% if form.id_type_covoiturage == type.id %] selected="selected" [% end %]>[% type.libelle %]</option>
+							[% end %] 
+						</select> 
+					</div>
+					<div class="col-sm-2">
+						<button class="btn btn-primary" type="submit">Suivant <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></button>
+					</div>
+					[% include template/error.tt msg="${msgs.id_type_covoiturage}" %]
+				</div>
+			</div>
+		</fieldset>
+	</form>
+	</div>
+</div>

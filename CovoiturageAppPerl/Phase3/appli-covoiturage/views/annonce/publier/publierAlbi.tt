@@ -1,0 +1,69 @@
+[% USE date %]
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+        	<i class="glyphicon glyphicon-comment pull-right"></i>
+            <h5>
+            	Publier un covoiturage dans Albi
+			</h5>
+       </div>
+	</div>
+	<div class="panel-body">
+	<form class="form-horizontal" action="[% url_validation %]" method="post">
+		<fieldset>
+				<div class="form-group">
+					<label class="col-sm-4 control-label" >Date de départ </label>
+					<div class="col-sm-3">
+						[% include template/champDate.tt nom="date" %] 
+					</div>
+					[% include template/error.tt msg="${msgs.date}" %] 
+					<div class="col-sm-2">
+						[% include template/champHeure.tt nom="heure" gl %] 
+				</div>
+				[% include template/error.tt msg="${msgs.heure}" %] 
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label" for="select">Lieu de départ</label>
+				<div class="col-sm-4">
+					[% include template/champLieuAlbi.tt typeLieu="lieu_depart" default_option="lieu de départ" id="${annonce.id_lieu_depart.id}" %]
+				</div>
+				[% include template/error.tt msg="${msgs.id_lieu_depart}" %]
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label" for="select">Lieu de destination</label>
+				<div class="col-sm-4">
+					[% include template/champLieuAlbi.tt typeLieu="lieu_destination" default_option="lieu de départ" id="${annonce.id_lieu_destination.id}"%]
+				</div>
+				[% include template/error.tt msg="${msgs.id_lieu_destination}" %]
+			</div>
+	<div class="form-group">
+		[% include template/champPlace.tt  msg="${msgs.nombre_place}" %]
+	</div>
+	<div class="form-group">
+		<label class="col-sm-4 control-label" for="textArea">Description</label>
+		<div class="col-sm-6">
+			<textarea id="textArea" rows="3" class="form-control" name="description">[% annonce.description %]</textarea>
+			<span class="help-block">Entrez une description</span>
+		</div>
+		[% include template/error.tt msg="${msgs.description}" %] 
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-6 col-sm-offset-3">
+			<a class="btn btn-default" href="[% uri_base %]"> Annuler <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a>
+			<button class="btn btn-info" type="reset"> Reset <span aria-hidden="true" class="glyphicon glyphicon-repeat"></span></button>
+			<button class="btn btn-primary" type="submit">Valider <span aria-hidden="true" class="glyphicon glyphicon-ok"></span></button>
+		</div>
+	</div>
+</fieldset>
+</form>
+	</div>
+</div>
+<script src="[% uri_base %]/javascripts/autocompleteopenstreetmap.js"></script>
+<script>
+$(document).ready(setDatePicker());
+</script>			
+			
+			

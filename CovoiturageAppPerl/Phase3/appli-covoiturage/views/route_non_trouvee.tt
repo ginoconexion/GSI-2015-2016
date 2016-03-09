@@ -1,0 +1,5 @@
+[% USE Dumper %]
+<h4>Erreur: route pas encore implémentée.</h4>
+<li>Methode: [% request.method %]
+<li>Chemin: [% path %]
+<li>Voici la requete: [% Dumper.dump_html(request) %]

@@ -1,0 +1,38 @@
+<a class="btn btn-default" href="[% uri_base %]"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"> Retour </span></a>
+
+<hr>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+        	<i class="glyphicon glyphicon-pencil pull-right"></i>
+            <h5>
+            	Modifier un lieu dans Albi
+			</h5>
+       </div>
+	</div>
+	<div class="panel-body">
+		<form class="form-horizontal" action="[% url_validation %]" method="post">
+		<fieldset>
+				<div class="form-group">
+					<div class="col-sm-6">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><span aria-hidden="true" class="glyphicon glyphicon-road"></span></span>
+							<input type="text" autocomplete="off" class="form-control" name="nom" value="[% lieu.nom %]" aria-describedby="basic-addon1">
+						</div> 
+					</div>
+					[% include template/error.tt msg="${msgs.nom}" %] 
+				</div>
+	
+				<div class="form-group">
+					<div class="col-sm-6 col-sm-offset-1">
+					<button class="btn btn-default" type="reset"> Reset <span aria-hidden="true" class="glyphicon glyphicon-repeat"></span></button>
+					<button class="btn btn-primary" type="submit">Valider <span aria-hidden="true" class="glyphicon glyphicon-ok"></span></button>
+				</div>
+			</div>
+		</fieldset>
+		</form>
+	</div>
+</div>
+			
+			

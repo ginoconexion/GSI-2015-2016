@@ -1,0 +1,101 @@
+[% USE date %]
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+        	<i class="glyphicon glyphicon-comment pull-right"></i>
+            <h4>
+            	 Covoiturage [% annonce.id_lieu_depart.nom %] - [% foreach etape in annonce.id_lieus %][% etape.nom %] - [% end %] [% annonce.id_lieu_destination.nom %]
+			</h4>
+       </div>
+	</div>
+	<div class="panel-body">
+	[% date_annonce = date.format(annonce.date_depart, format='%d-%m-%Y') %]
+	[% heure_annonce = date.format(annonce.date_depart, format='%Hh%M') %]
+	
+	<fieldset>
+		<div class="col-sm-5">
+			<div class="bs-component">
+				<blockquote style="font-size: 14px;">
+					<h4><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span> <em>[% date_annonce %]</em>, depart a <em>[% heure_annonce %]</em></h4>
+					<div id="itineraire">
+					</div>
+					<br>
+					<p>[% annonce.id_utilisateur.prenom %] [% annonce.id_utilisateur.nom %] - [% annonce.id_utilisateur.type %]</p>
+					<p>[% annonce.id_utilisateur.mail %]</p>
+					<p>[% annonce.id_utilisateur.telephone %]</p>
+				</blockquote>
+			<div class="btn btn-primary btn-xs" id="source-button" style="display: none;">&lt; &gt;</div>
+		</div>
+		</div>
+		<div [% if annonce.id_type_covoiturage.code == 'albi' %]class="col-sm-7"[% else %]class="col-sm-3"[% end %]>
+			<div class="bs-component">
+				<blockquote class="blockquote-reverse" , style="font-size: 14px;">
+					<br>
+					<h4><em>[% if annonce.prix %][% annonce.prix %]</em> euros [% end %]</h4>
+	            	<h4><em>[% annonce.nombre_place %]</em> place[% if annonce.nombre_place > 1%]s[% end %]</h4>
+	            	<h4>[% if annonce.id_taille_baguage %] Bagages :<em> [% annonce.id_taille_baguage.libelle %]</em>[% end %]</h4>
+				</blockquote>
+			</div>
+		</div>
+		[% if annonce.id_type_covoiturage.code == 'albi-toulouse' or annonce.id_type_covoiturage.code == 'france' %]
+		<div class="col-sm-4">
+			<div id="map"></div>
+		</div>
+		[% end %]		
+	</fieldset>
+		
+		<div class="col-sm-12">
+		<h5>[% if annonce.description %]Description : </h5>
+		<p class="align">[% annonce.description %]</p>
+		<br>
+		[% end %]
+		</div>
+	
+	<div class="row">
+		<div class="col-sm-3">
+			<a class="btn btn-default align" href="[% uri_base %]"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span> Retour</a>
+		</div>
+		[% if annonce.id_utilisateur.id == session.user.id or session.user.admin == 1%]
+		<div class="col-sm-3">
+			<a class="btn btn-default align" href="[% uri_base %]annonce/modifier/[% annonce.id_type_covoiturage.id %]/[% annonce.id %]/"><span aria-hidden="true"
+				class="glyphicon glyphicon-pencil"></span> Modifier</a>
+			</div>
+			[% end %]
+			[% if annonce.id_utilisateur.id != session.user.id and annonce.id_type_covoiturage.code != "albi" %]
+			<div class="col-sm-3">
+				<a class="btn btn-default align" href="[% uri_base %]sauvegarder/[% annonce.id %]/"><span aria-hidden="true"
+					class="glyphicon glyphicon-save"></span> Sauvegarder</a>
+			</div>
+			[% end %]
+			[% if annonce.id_utilisateur.id == session.user.id or session.user.admin == 1 %]
+			<div class="col-sm-3">
+					<a class="btn btn-default align" href="[% uri_base %]annonce/supprimer/[% annonce.id_type_covoiturage.id %]/[% annonce.id %]/"><span aria-hidden="true"
+					class="glyphicon glyphicon-trash"></span> Supprimer</a>
+			</div>
+			[% end %]
+		</div>
+	</div>
+</div>
+
+<script src="[% uri_base %]/javascripts/googlemaps.js"></script>
+<script>
+function init(){
+	var start = new google.maps.LatLng([% annonce.id_lieu_depart.latitude %], [% annonce.id_lieu_depart.longitude %]);
+  	var end = new google.maps.LatLng([% annonce.id_lieu_destination.latitude %], [% annonce.id_lieu_destination.longitude %]);
+	var waypts = [];
+    [% foreach etape in annonce.id_lieus %]
+  	waypts.push({
+	    location: new google.maps.LatLng([% etape.latitude %], [% etape.longitude %]),
+	    stopover: true
+	}) 
+  	[% end %]
+  	var villes = [];
+   [% foreach etape in annonce.id_lieus %]
+   villes.push("[% etape.nom %]");
+   [% end %]
+   villes.push("[% annonce.id_lieu_destination.nom %]");
+   console.log(villes);
+   initMap(waypts, villes, start, end);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?&callback=init" async defer>

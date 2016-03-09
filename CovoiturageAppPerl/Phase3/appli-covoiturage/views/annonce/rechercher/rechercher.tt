@@ -1,0 +1,66 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+    	<div class="panel-title">
+        	<i class="glyphicon glyphicon-search pull-right"></i>
+            <h5>
+            	Rechercher un covoiturage
+            	[% if annonce.id_type_covoiturage.code == 'albi-toulouse' %]
+					Albi - Toulouse	
+				[% elsif annonce.id_type_covoiturage.code == 'france' %]
+					en France
+				[% end %]
+			</h5>
+       </div>
+   </div>
+
+   <div class="panel-body">
+   	<form class="form-horizontal" action="[% url_validation %]" method="get">
+		<fieldset>
+			<div class="form-group">
+				<div class="col-sm-3">
+				[% if annonce.id_type_covoiturage.code == 'albi' %]
+					[% include template/champLieuAlbi.tt typeLieu="lieu_depart" default_option="lieu de départ" id="${annonce.id_lieu_depart.id}"%]
+				[% else %]
+					[% include template/champVille.tt typeVille="depart" code="${annonce.id_type_covoiturage.code}" nom_lieu="${annonce.id_lieu_depart.nom}" latitude="${annonce.id_lieu_depart.latitude}" longitude="${annonce.id_lieu_depart.longitude}" placeholder="De" %] 
+					<ul style="margin-top:20%; width:300px; display:none;"  class="liste autocomplete-container"></ul>
+				[% end %]
+				</div>
+				[% if annonce.id_type_covoiturage.code == 'albi-toulouse' or annonce.id_type_covoiturage.code == 'france' %]
+				<div class="col-sm-1">
+					<button id="interchanger" class="btn btn-default" type="button"><span aria-hidden="true" class="glyphicon glyphicon-resize-horizontal"></span></button>
+				</div>
+				[% end %]
+				
+				<div class="col-sm-3">
+					[% if annonce.id_type_covoiturage.code == 'albi' %]
+						[% include template/champLieuAlbi.tt typeLieu="lieu_destination" default_option="lieu de destination" id="${annonce.id_lieu_destination.id}"%]
+					[% else %]
+						[% include template/champVille.tt typeVille="destination" code="${annonce.id_type_covoiturage.code}" nom_lieu="${annonce.id_lieu_destination.nom}" latitude="${annonce.id_lieu_destination.latitude}" longitude="${annonce.id_lieu_destination.longitude}" placeholder="À" %]
+						<ul style="margin-top:15%; width:300px; display:none;"  class="liste autocomplete-container"></ul>
+					[% end %]
+				</div>
+				<div class="col-sm-3">
+					[% include template/champDate.tt nom="date" %] 
+				</div>
+				<div class="col-sm-2">
+					<button class="btn btn-primary" type="submit"><span aria-hidden="true" class="glyphicon glyphicon-search"></span> Rechercher </button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+	</div>
+</div>
+
+
+
+<script src="[% uri_base %]/javascripts/autocompleteopenstreetmap.js"></script>
+<script>
+$(document).ready(autocomplete());
+[% if annonce.id_type_covoiturage.code == 'albi-toulouse' or annonce.id_type_covoiturage.code == 'france' %]
+	$(document).ready(interchangerVilles());
+[% end %]
+
+$(document).ready(setDatePicker());
+</script>
+  
+[% include annonce/rechercher/liste2.tt %] 

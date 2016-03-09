@@ -1,0 +1,147 @@
+[% USE date %]
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+        	<i class="glyphicon glyphicon-comment pull-right"></i>
+            <h5>
+            	Publier une annonce de covoiturage
+            	[% if annonce.id_type_covoiturage.code == "france" %]
+            	en France :
+            	[% else %]
+            	Albi - Toulouse
+            	[% end %]
+			</h5>
+       </div>
+	</div>
+	<div class="panel-body">
+		<form class="form-horizontal" action="[% url_validation %]" method="post">
+		<fieldset>
+				<div class="form-group">
+					<label class="col-sm-4 control-label" >Date de départ</label>
+					<div class="col-sm-3">
+						[% include template/champDate.tt nom="date" %] 
+					</div>
+					[% include template/error.tt msg="${msgs.date}" %] 
+					<div class="col-sm-2">
+						[% include template/champHeure.tt nom="heure" gl %] 
+					</div>
+					[% include template/error.tt msg="${msgs.heure}" %] 
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-4 control-label" >Ville de départ</label>
+					<div class="col-sm-6">
+						[% include template/champVille.tt typeVille="depart" code="${annonce.id_type_covoiturage.code}" nom_lieu="${annonce.id_lieu_depart.nom}" latitude="${annonce.id_lieu_depart.latitude}" longitude="${annonce.id_lieu_depart.longitude}" placeholder="Ville de départ" %] 
+					<div>
+					<ul id="liste" style="margin-top:10%; width:300px; display:none;"  class="liste autocomplete-container"></ul>
+				</div>
+				</div>
+				[% include template/error.tt msg="${msgs.depart}" %] 
+			</div>
+			[% if annonce.id_type_covoiturage.code == 'albi-toulouse' %]
+			<div class="form-group">
+			<div class="col-sm-1 col-sm-offset-4">
+				<button id="interchanger" class="btn btn-default" type="button"><span aria-hidden="true" class="glyphicon glyphicon-resize-horizontal"></span></button>
+			</div>
+			</div>
+			[% end %]
+			
+			<div id="etapes_valides">
+			[% foreach etape in annonce.id_lieus %]
+			<div class="form-group">
+				<label class="col-sm-4 control-label">Etape n° [% loop.count %]</label>
+					<div class="col-sm-4">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><span aria-hidden="true" class="glyphicon glyphicon-road"></span></span>
+							<input type="text" autocomplete="off" class="form-control autocomplete" name="etape[[% loop.count %]][]" aria-describedby="basic-addon1" value="[% etape.nom %]">
+							<input type="hidden" class="nom" name="etape[[% loop.count %]][]" value="[% etape.nom %]">
+							<input type="hidden" class="latitude" name="etape[[% loop.count %]][]" value="[% etape.latitude %]">
+							<input type="hidden" class="longitude" name="etape[[% loop.count %]][]" value="[% etape.longitude %]">
+						</div>
+						<div>
+						<ul style="margin-top: 10%; width: 300px; display: none;" class="liste autocomplete-container"></ul>
+					</div>
+				</div>
+			</div>
+			[% end %]
+			</div>
+			
+			[% include template/champEtape.tt %]
+	
+		
+		<div class="form-group">
+			<label class="col-sm-4 control-label" >Ville de destination</label>
+			<div class="col-sm-6">
+				[% include template/champVille.tt typeVille="destination" code="${annonce.id_type_covoiturage.code}" nom_lieu="${annonce.id_lieu_destination.nom}" latitude="${annonce.id_lieu_destination.latitude}" longitude="${annonce.id_lieu_destination.longitude}" placeholder="Ville de destination" %] 
+			<div>
+			<ul id="liste" style="margin-top:10%; width:300px; display:none;"  class="liste autocomplete-container"></ul>
+		</div>
+		</div>
+		[% include template/error.tt msg="${msgs.destination}" %]
+		[% include template/error.tt msg="${msgs.item('destination.nom')}" %] 
+		</div>
+		
+		<div class="form-group">
+			[% include template/champPlace.tt  msg="${msgs.nombre_place}" %]
+		</div>
+	<div class="form-group">
+		<label class="col-sm-4 control-label" for="select">Taille des bagages </label>
+		<div class="col-sm-6">
+			<select class="form-control" [% if annonce.id_taille_baguage.id == 0 or annonce.id_taille_baguage == 0 %]selected="selected"[% end %]  name="id_taille_baguage">
+				<option selected="selected" value=""> Selectionnez la taille des bagages</option>
+				[% foreach taille = tailles %]
+				<option value="[% taille.id %]" [% if taille.id == annonce.id_taille_baguage.id or taille.id == annonce.id_taille_baguage  %] selected="selected"[% end %]>[% taille.libelle %]</option>
+				[% end %]
+			</select> 
+		</div>
+		[% include template/error.tt msg="${msgs.id_taille_baguage}" %] 
+	</div>	
+	
+	<div class="form-group">
+		<label class="col-sm-4 control-label" >Prix</label>
+			<div class="col-sm-2">
+				<div class="input-group">
+					<input type="text" class="form-control" autocomplete="off" placeholder="Prix" aria-describedby="basic-addon1" name="prix" value="[% annonce.prix %]">
+					<span class="input-group-addon" id="basic-addon1"><span aria-hidden="true" class="glyphicon glyphicon-euro"></span></span>
+					</div>
+				</div>
+			[% include template/error.tt msg="${msgs.prix}" %] 
+	</div>
+		
+		
+		
+	<div class="form-group">
+		<label class="col-sm-4 control-label" for="textArea">Description</label>
+		<div class="col-sm-6">
+			<textarea id="textArea" rows="3" class="form-control" name="description">[% annonce.description %]</textarea>
+			<span class="help-block">Entrez une description</span>
+		</div>
+		[% include template/error.tt msg="${msgs.description}" %] 
+	</div>
+	<div class="form-group">
+		<div class="col-sm-6 col-sm-offset-3">
+			<a class="btn btn-default" href="[% uri_base %]"> Annuler <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a>
+			<button class="btn btn-info" type="reset"> Reset <span aria-hidden="true" class="glyphicon glyphicon-repeat"></span></button>
+			<button class="btn btn-primary" type="submit">Valider <span aria-hidden="true" class="glyphicon glyphicon-ok"></span></button>
+		</div>
+	</div>
+</fieldset>
+</form>
+	</div>
+</div>
+	
+<script src="[% uri_base %]/javascripts/autocompleteopenstreetmap.js"></script>
+<script>
+$(document).ready(autocomplete());
+$(document).ready(setDatePicker());
+[% if annonce.id_type_covoiturage.code == 'albi-toulouse' %]
+	$(document).ready(interchangerVilles());
+[% end %]
+
+[% if annonce.id_type_covoiturage.code == "france" %]
+$(document).ready(addEtape1());
+[% end %]
+</script>
+			
+			
+			

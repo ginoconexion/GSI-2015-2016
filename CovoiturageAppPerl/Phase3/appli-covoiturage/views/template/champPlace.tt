@@ -1,0 +1,10 @@
+<label class="col-sm-4 control-label" for="select">Nombre de places</label>
+<div class="col-sm-4">
+	<select id="select" class="form-control" name="nombre_place">
+		<option [% if annonce.nombre_place == 0 %]selected="selected"[% end %] value=""> Selectionnez un nombre de places</option>
+		[% foreach place = places %]
+		<option value="[% place %]" [% if place == annonce.nombre_place %] selected="selected" [% end %]>[% place %] place[% if place > 1%]s[% end %]</option>
+		[% end %]
+	</select> 
+</div>
+[% include template/error.tt msg="${msg}" %] 

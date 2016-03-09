@@ -1,0 +1,6 @@
+<select class="form-control" name="id_[% typeLieu %]">
+	<option [% if id == 0 %] selected="selected" [% end %] value=""> Selectionnez le [% default_option %]</option>
+	[% foreach lieu = lieux %]
+	<option value="[% lieu.id %]" [% if lieu.id == id %] selected="selected"[% end %]>[% lieu.nom %]</option>
+	[% end %]
+</select> 

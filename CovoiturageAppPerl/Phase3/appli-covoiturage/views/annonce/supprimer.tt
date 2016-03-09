@@ -1,0 +1,10 @@
+	<form class="form-horizontal" action="[% url_validation %]" method="post">
+		<fieldset>
+			<legend>Supprimer l'annonce : [% annonce.id_lieu_depart.nom %] - [% annonce.id_lieu_destination.nom %]</legend>
+			<div class="col-sm-6 col-sm-offset-3">
+				<button class="btn btn-primary" type="submit">Valider <span aria-hidden="true" class="glyphicon glyphicon-ok"></span></button>
+				<a class="btn btn-default" href="[% uri_base %]annonce/publiees/"> Annuler <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a>
+			</div>
+		</fieldset>
+		<br>
+	</form>

@@ -1,0 +1,26 @@
+<head>
+    <meta http-equiv="Content-type" content="text/html;" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Emacovoit</title>
+    <link rel="icon" href="[% uri_base %]/apachehaus.ico" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
+    <link rel="stylesheet" href="[% uri_base %]/css/bootstrap.min.css">
+    <link rel="stylesheet" href="[% uri_base %]/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="[% uri_base %]/css/covoiturage.css">
+    <link rel="stylesheet" href="[% uri_base %]/javascripts/jquery-ui/jquery-ui.css">
+    
+    
+    <script src="[% uri_base %]/javascripts/jquery.min.js"></script>
+    <script src="[% uri_base %]/javascripts/bootstrap.min.js"></script>
+    <script src="[% uri_base %]/javascripts/jquery-ui/jquery-ui.js"></script>
+    <script src="[% uri_base %]/javascripts/jquery-ui/datepicker-fr.js"></script>
+      <style>
+      #map {
+        width: 100%;
+        height: 300px;
+      }
+      </style>
+</head>

@@ -1,0 +1,4 @@
+<div class="input-group">
+	<span class="input-group-addon" id="basic-addon1"><span aria-hidden="true" class="glyphicon glyphicon-time"></span></span>
+	<input type="text" class="form-control" autocomplete="off" placeholder="HH:MM" aria-describedby="basic-addon1" name="[% nom %]" value="[% annonce.heure %]">
+</div>

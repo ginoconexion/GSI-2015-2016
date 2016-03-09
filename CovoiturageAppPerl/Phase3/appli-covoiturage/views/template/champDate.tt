@@ -1,0 +1,9 @@
+[% USE date %]
+<div class="input-group">
+	<span class="input-group-addon" id="basic-addon1"><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span></span>
+	[% if annonce.date_depart %]
+		[% annonce.date = date.format(annonce.date_depart, format='%d-%m-%Y') %]
+		[% annonce.heure = date.format(annonce.date_depart, format='%H:%M') %]
+	[% end %]
+	<input id="datepicker" type="text" autocomplete="off" class="form-control" placeholder="jj-mm-aaaa" aria-describedby="basic-addon1" name="[% nom %]" value="[% annonce.date %]">
+</div>

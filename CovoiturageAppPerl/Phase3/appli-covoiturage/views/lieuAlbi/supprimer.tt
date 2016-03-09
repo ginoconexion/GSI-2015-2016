@@ -1,0 +1,26 @@
+<a class="btn btn-default" href="[% uri_base %]"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"> Retour </span></a>
+<hr>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+        	<i class="glyphicon glyphicon-trash pull-right"></i>
+            <h5>
+            	Supprimer le lieu dans Albi : [% lieu.nom %]
+			</h5>
+       </div>
+	</div>
+	<div class="panel-body">
+		<form class="form-horizontal" action="[% url_validation %]" method="post">
+		<fieldset>
+				<h7>Tous les covoiturages associés à ce lieu seront supprimés.</h7>
+				<hr>
+				<div class="form-group">
+					<div class="col-sm-6 col-sm-offset-1">
+					<button class="btn btn-default" type="reset"> Reset <span aria-hidden="true" class="glyphicon glyphicon-repeat"></span></button>
+					<button class="btn btn-danger" type="submit">Valider <span aria-hidden="true" class="glyphicon glyphicon-ok"></span></button>
+				</div>
+			</div>
+		</fieldset>
+		</form>
+	</div>
+</div>
